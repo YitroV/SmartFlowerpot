@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>Yitro Verstraeten - Smart Flowerpot</title>
+    <meta name="description" content="This is Project One website." />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#44c8f5" />
+
+    <link rel="icon" href="favicon.svg" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <link rel="manifest" href="manifest.json" />
+    <link rel="stylesheet" href="style/normalize.css" />
+    <link rel="stylesheet" href="style/screen.css" />
+    <link rel="stylesheet" href="https://use.typekit.net/qaa0ejj.css" />
+
+    <!-- Script -->
+    <script src="https://cdn.socket.io/4.0.0/socket.io.min.js" integrity="sha384-DkkWv9oJFWLIydBXXjkBWnG1/fuVhw8YPBq37uvvD6WSYRFRqr21eY5Dg9ZhmWdy" crossorigin="anonymous"></script>
+    <script src="script/dataHandler.js"></script>
+    <script src="script/app.js"></script>
+  </head>
+  <body>
+    <header class="o-row">
+      <h1>Smart flowerpot</h1>
+    </header>
+    <figure class="o-row">
+      <img src="img/clusia.jpg" alt="Clusia Princess" />
+    </figure>
+    <section class="o-row">
+      <div class="o-container">
+        <article class="o-section">
+          <div class="o-layout o-layout--justify-space-evenly o-layout--align-center">
+            <div class="o-layout__item u-1-of-2">
+              <div class="js-temp">
+                <a href="history.html" class="c-link-cta">
+                  <div>Temperatuur: <br />Nog niks gemeten</div>
+                </a>
+              </div>
+            </div>
+            <div class="o-layout__item u-1-of-2">
+              <div class="js-light">
+                <a href="history.html" class="c-link-cta">
+                  <div>Lichtsterkte: <br />Nog niks gemeten</div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="o-section">
+          <div class="o-layout o-layout--justify-space-evenly o-layout--align-center">
+            <div class="o-layout__item u-1-of-2">
+              <div class="js-ground">
+                <a href="history.html" class="c-link-cta">
+                  <div>Vochtigheid grond: <br />Nog niks gemeten</div>
+                </a>
+              </div>
+            </div>
+            <div class="o-layout__item u-1-of-2">
+              <div class="c-link-cta">
+                <button type="button" class="js-btn-pump button">Zet de pomp aan!</button>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </body>
+</html>

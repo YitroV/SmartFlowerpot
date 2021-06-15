@@ -1,0 +1,707 @@
+/*
+    Elements: Page
+    ---
+    Default markup for page level elements
+*/
+
+html {
+  font-size: 16px;
+  line-height: 1.5;
+  font-family: jaf-bernina-sans, Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #5c6366;
+  /* padding: 24px 24px 0; */
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+  background: #44c8f5;
+  color: white;
+}
+
+::selection {
+  background: #44c8f5;
+  color: white;
+}
+
+body {
+  max-width: 42em; /*komt van de font-size (16px) maal 42*/
+  margin: 0 auto;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: top;
+}
+
+/*
+    Elements: typography
+    ---
+    Default markup for typographic elements
+*/
+
+h1 {
+  font-family: jaf-bernina-sans, Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 36px;
+  font-weight: normal;
+  line-height: 40px;
+  margin: 0 0 48px;
+}
+
+h2 {
+  font-size: 23px;
+  line-height: 32px;
+  margin: 0 0 24px;
+}
+
+h3 {
+  font-size: 18px;
+  line-height: 24px;
+  margin: 0 0 24px;
+}
+
+h4,
+h5,
+h6 {
+  font-size: 16px;
+  line-height: 24px;
+  margin: 0 0 24px;
+}
+
+p,
+ol,
+ul,
+dl,
+table,
+address,
+figure {
+  margin: 0 0 24px;
+}
+
+ul,
+ol {
+  padding-left: 24px;
+}
+
+li ul,
+li ol {
+  margin-bottom: 0;
+}
+
+blockquote {
+  font-style: italic;
+  font-size: 23px;
+  line-height: 32px;
+  margin: 0 0 24px;
+  font-family: 'Times New Roman', serif;
+}
+
+blockquote * {
+  font-size: inherit;
+  line-height: inherit;
+}
+
+figcaption {
+  font-size: 12px;
+  line-height: 16px;
+  padding-top: 8px;
+  color: Grey;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background: LightGrey;
+  margin: 0 0 24px;
+}
+
+a {
+  color: royalblue;
+  transition: all 0.1s ease-in-out;
+}
+
+a:visited,
+a:active {
+  color: BlueViolet;
+}
+
+a:hover,
+a:focus {
+  color: crimson;
+}
+
+table {
+  width: 100%;
+  border-spacing: 0;
+}
+
+th {
+  text-align: left;
+}
+
+th,
+td {
+  padding: 4px 8px;
+  border-bottom: 1px solid gainsboro;
+}
+
+.odd {
+  background-color: whitesmoke;
+}
+
+.button {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 600;
+  padding: 11px 0px;
+  background: #61974d;
+  border-radius: 18px;
+  color: #fff;
+  border: none;
+}
+
+.button:hover,
+.button:focus {
+  color: #fff;
+  background: #c26b60;
+}
+
+.button:active {
+  color: #fff;
+  background-color: #61974d;
+}
+
+/*------------------------------------*\
+  #OBJECTS
+\*------------------------------------*/
+
+/*
+    Objects: Row
+    ---
+    Creates a horizontal row that stretches the viewport and adds padding around children
+*/
+
+.o-row {
+  padding: 24px 24px 0;
+  display: flow-root;
+}
+
+/* size modifiers */
+
+.o-row--lg {
+  padding-top: 48px;
+  padding-bottom: 24px;
+}
+
+.o-row--xl {
+  padding-top: 72px;
+  padding-bottom: 48px;
+}
+
+@media (min-width: 768px) {
+  .o-row {
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+
+  .o-row--md {
+    padding-top: 48px;
+    padding-bottom: 24px;
+  }
+
+  .o-row--lg {
+    padding-top: 48px;
+    padding-bottom: 72px;
+  }
+}
+
+@media (min-width: 992px) {
+  .o-row--xl {
+    padding-top: 96px;
+    padding-bottom: 96px;
+  }
+}
+
+.o-row--color-yellow {
+  background-color: #ffe018;
+}
+
+/*
+    Objects: section
+    ---
+    Creates vertical whitespace between adjacent sections inside a row
+*/
+
+.o-section {
+  display: flow-root;
+}
+
+.o-section + .o-section {
+  margin-top: 24px;
+}
+
+@media (min-width: 768px) {
+  .o-section--lg + .o-section--lg,
+  .o-section--xl + .o-section--xl {
+    margin-top: 48px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .o-section--xl + .o-section--xl {
+    margin-top: 72px;
+  }
+}
+
+/*
+    Objects: Layout
+    ---
+    The layout object provides us with a column-style layout system. This object
+    contains the basic structural elements, but classes should be complemented
+    with width utilities
+*/
+
+.o-layout {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.o-layout__item {
+  flex-basis: 100%;
+  padding: 20px;
+}
+
+/* gutter modifiers, these affect o-layout__item too */
+
+.o-layout--gutter {
+  margin: 0 -12px;
+}
+
+.o-layout--gutter > .o-layout__item {
+  padding: 0 12px;
+}
+
+.o-layout--gutter-sm {
+  margin: 0 -6px;
+}
+
+.o-layout--gutter-sm > .o-layout__item {
+  padding: 0 6px;
+}
+
+.o-layout--gutter-lg {
+  margin: 0 -24px;
+}
+
+.o-layout--gutter-lg > .o-layout__item {
+  padding: 0 48px;
+}
+
+/* reverse horizontal row modifier */
+
+.o-layout--row-reverse {
+  flex-direction: row-reverse;
+}
+
+/* Horizontal alignment modifiers*/
+
+.o-layout--justify-start {
+  justify-content: flex-start;
+}
+
+.o-layout--justify-end {
+  justify-content: flex-end;
+}
+
+.o-layout--justify-center {
+  justify-content: center;
+}
+
+.o-layout--justify-space-around {
+  justify-content: space-around;
+}
+
+.o-layout--justify-space-evenly {
+  justify-content: space-evenly;
+}
+
+.o-layout--justify-space-between {
+  justify-content: space-between;
+}
+
+/* Vertical alignment modifiers */
+
+.o-layout--align-start {
+  align-items: flex-start;
+}
+
+.o-layout--align-end {
+  align-items: flex-end;
+}
+
+.o-layout--align-center {
+  align-items: center;
+}
+
+.o-layout--align-baseline {
+  align-items: baseline;
+}
+
+/* Vertical alignment modifiers that only work if there is one than one flex item */
+
+.o-layout--align-content-start {
+  align-content: start;
+}
+
+.o-layout--align-content-end {
+  align-content: end;
+}
+
+.o-layout--align-content-center {
+  align-content: center;
+}
+
+.o-layout--align-content-space-around {
+  align-content: space-around;
+}
+
+.o-layout--align-content-space-between {
+  align-content: space-between;
+}
+
+/*------------------------------------*\
+  #COMPONENTS
+\*------------------------------------*/
+
+/*
+    Component: Component name
+    ---
+    Component description
+*/
+
+/*
+    Component: CTA link
+    ---
+    Small cta link with custom animation
+*/
+
+.c-link-cta {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 600;
+  padding: 14px 25px;
+  background: #61974d;
+  border-radius: 18px;
+}
+
+.c-link-cta,
+.c-link-cta:visited,
+.c-link-cta:active {
+  color: #fff;
+}
+
+.c-link-cta:hover,
+.c-link-cta:focus {
+  color: #fff;
+  background: #c26b60;
+}
+
+.c-link-cta:active {
+  color: #fff;
+  background-color: #c26b60;
+}
+
+.c-link-cta--lg {
+  font-size: 16px;
+  line-height: 22px;
+  padding: 22px 34px;
+}
+
+.c-link-normal {
+  color: #007c89;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.c-link-normal,
+.c-link-normal:visited,
+.c-link-normal:active {
+  color: #007c89;
+}
+
+.c-link-normal:hover,
+.c-link-normal:focus {
+  color: #241c15;
+}
+
+.c-link-normal:active {
+  color: #241c15;
+  background-color: #ffe018;
+}
+
+/*------------------------------------*\
+  #UTILITIES
+\*------------------------------------*/
+
+/*
+    Utility: Flex
+    ---
+    Utility classes to put specific flex properties onto elements
+    Will be mostly used on o-layout__item
+*/
+
+.u-flex-basis-auto {
+  flex-basis: auto !important;
+}
+
+.u-flex-grow-1 {
+  flex-grow: 1 !important;
+}
+
+.u-1-of-2 {
+  flex-basis: calc(100% / 2) !important;
+}
+
+.u-1-of-3 {
+  flex-basis: calc(100% / 3) !important;
+}
+
+.u-2-of-3 {
+  flex-basis: calc(100% / 3 * 2) !important;
+}
+
+.u-1-of-4 {
+  flex-basis: calc(100% / 4) !important;
+}
+
+.u-3-of-4 {
+  flex-basis: calc(100% / 4 * 3) !important;
+}
+
+.u-1-of-5 {
+  flex-basis: calc(100% / 5) !important;
+}
+
+.u-2-of-5 {
+  flex-basis: calc(100% / 5 * 2) !important;
+}
+
+.u-3-of-5 {
+  flex-basis: calc(100% / 5 * 3) !important;
+}
+
+.u-4-of-5 {
+  flex-basis: calc(100% / 5 * 4) !important;
+}
+
+.u-1-of-6 {
+  flex-basis: calc(100% / 6) !important;
+}
+
+.u-5-of-6 {
+  flex-basis: calc(100% / 6 * 5) !important;
+}
+
+@media (min-width: 576px) {
+  .u-1-of-2-bp1 {
+    flex-basis: calc(100% / 2) !important;
+  }
+  .u-1-of-3-bp1 {
+    flex-basis: calc(100% / 3) !important;
+  }
+  .u-2-of-3-bp1 {
+    flex-basis: calc(100% / 3 * 2) !important;
+  }
+  .u-1-of-4-bp1 {
+    flex-basis: calc(100% / 4) !important;
+  }
+  .u-3-of-4-bp1 {
+    flex-basis: calc(100% / 4 * 3) !important;
+  }
+  .u-1-of-5-bp1 {
+    flex-basis: calc(100% / 5) !important;
+  }
+  .u-2-of-5-bp1 {
+    flex-basis: calc(100% / 5 * 2) !important;
+  }
+  .u-3-of-5-bp1 {
+    flex-basis: calc(100% / 5 * 3) !important;
+  }
+  .u-4-of-5-bp1 {
+    flex-basis: calc(100% / 5 * 4) !important;
+  }
+  .u-1-of-6-bp1 {
+    flex-basis: calc(100% / 6) !important;
+  }
+  .u-5-of-6-bp1 {
+    flex-basis: calc(100% / 6 * 5) !important;
+  }
+}
+
+@media (min-width: 768px) {
+  .u-1-of-2-bp2 {
+    flex-basis: calc(100% / 2) !important;
+  }
+  .u-1-of-3-bp2 {
+    flex-basis: calc(100% / 3) !important;
+  }
+  .u-2-of-3-bp2 {
+    flex-basis: calc(100% / 3 * 2) !important;
+  }
+  .u-1-of-4-bp2 {
+    flex-basis: calc(100% / 4) !important;
+  }
+  .u-3-of-4-bp2 {
+    flex-basis: calc(100% / 4 * 3) !important;
+  }
+  .u-1-of-5-bp2 {
+    flex-basis: calc(100% / 5) !important;
+  }
+  .u-2-of-5-bp2 {
+    flex-basis: calc(100% / 5 * 2) !important;
+  }
+  .u-3-of-5-bp2 {
+    flex-basis: calc(100% / 5 * 3) !important;
+  }
+  .u-4-of-5-bp2 {
+    flex-basis: calc(100% / 5 * 4) !important;
+  }
+  .u-1-of-6-bp2 {
+    flex-basis: calc(100% / 6) !important;
+  }
+  .u-5-of-6-bp2 {
+    flex-basis: calc(100% / 6 * 5) !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .u-1-of-2-bp3 {
+    flex-basis: calc(100% / 2) !important;
+  }
+  .u-1-of-3-bp3 {
+    flex-basis: calc(100% / 3) !important;
+  }
+  .u-2-of-3-bp3 {
+    flex-basis: calc(100% / 3 * 2) !important;
+  }
+  .u-1-of-4-bp3 {
+    flex-basis: calc(100% / 4) !important;
+  }
+  .u-3-of-4-bp3 {
+    flex-basis: calc(100% / 4 * 3) !important;
+  }
+  .u-1-of-5-bp3 {
+    flex-basis: calc(100% / 5) !important;
+  }
+  .u-2-of-5-bp3 {
+    flex-basis: calc(100% / 5 * 2) !important;
+  }
+  .u-3-of-5-bp3 {
+    flex-basis: calc(100% / 5 * 3) !important;
+  }
+  .u-4-of-5-bp3 {
+    flex-basis: calc(100% / 5 * 4) !important;
+  }
+  .u-1-of-6-bp3 {
+    flex-basis: calc(100% / 6) !important;
+  }
+  .u-5-of-6-bp3 {
+    flex-basis: calc(100% / 6 * 5) !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .u-1-of-2-bp4 {
+    flex-basis: calc(100% / 2) !important;
+  }
+  .u-1-of-3-bp4 {
+    flex-basis: calc(100% / 3) !important;
+  }
+  .u-2-of-3-bp4 {
+    flex-basis: calc(100% / 3 * 2) !important;
+  }
+  .u-1-of-4-bp4 {
+    flex-basis: calc(100% / 4) !important;
+  }
+  .u-3-of-4-bp4 {
+    flex-basis: calc(100% / 4 * 3) !important;
+  }
+  .u-1-of-5-bp4 {
+    flex-basis: calc(100% / 5) !important;
+  }
+  .u-2-of-5-bp4 {
+    flex-basis: calc(100% / 5 * 2) !important;
+  }
+  .u-3-of-5-bp4 {
+    flex-basis: calc(100% / 5 * 3) !important;
+  }
+  .u-4-of-5-bp4 {
+    flex-basis: calc(100% / 5 * 4) !important;
+  }
+  .u-1-of-6-bp4 {
+    flex-basis: calc(100% / 6) !important;
+  }
+  .u-5-of-6-bp4 {
+    flex-basis: calc(100% / 6 * 5) !important;
+  }
+}
+
+/*
+    Media Queries
+    ---
+    EXAMPLE Media Queries for Responsive Design.
+    These examples override the primary ('mobile first') styles.
+    Modify as content requires.
+*/
+
+/* Extra small devices (portrait phones, less than 576px)
+   No media query since this is the default in Bootstrap
+*/
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  html {
+    padding: 48px 48px 24px;
+  }
+  h1 {
+    font-size: 58px;
+    line-height: 64px;
+  }
+}
+
+/* Large devices (landscape tablets, desktops, 992px and up) */
+@media (min-width: 992px) {
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+}
